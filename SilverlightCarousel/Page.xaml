@@ -1,0 +1,83 @@
+﻿<UserControl x:Class="SilverlightCarousel.Page"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:uc="clr-namespace:SilverlightCarousel"
+    Width="600" Height="650"
+>
+    <StackPanel x:Name="LayoutRoot" Background="White" HorizontalAlignment="Center">
+        
+        <uc:CarouselCanvas x:Name="carousel1" Width="600" Height="360" Orientation="Horizontal"
+            RadiusX="200" RadiusY="50" 
+            MinOpacity="0.10"  MinScale="0.80" 
+            TransitionDelay="20" Decelleration="0.2" 
+            Elasticity="0.8" RotationSpeed="0.03" 
+            MouseEnter="carousel1_MouseEnter" MouseLeave="carousel1_MouseLeave">
+
+            <Button Content="SAMPLE1" Width="100" Height="100" Click="Button_Click" />
+            <Button Content="SAMPLE2" Width="100" Height="100" Click="Button_Click" />
+            <Button Content="SAMPLE3" Width="100" Height="100" Click="Button_Click" />
+            <Button Content="SAMPLE4" Width="100" Height="100" Click="Button_Click" />
+            <Button Content="SAMPLE5" Width="100" Height="100" Click="Button_Click" />
+            <Button Content="SAMPLE6" Width="100" Height="100" Click="Button_Click" />
+            <Button Content="SAMPLE7" Width="100" Height="100" Click="Button_Click" />
+            <Button Content="SAMPLE8" Width="100" Height="100" Click="Button_Click" />
+            <Button Content="SAMPLE9" Width="100" Height="100" Click="Button_Click" />
+            <Button Content="SAMPLE10" Width="100" Height="100" Click="Button_Click" />
+            <Button Content="SAMPLE11" Width="100" Height="100" Click="Button_Click" />
+            <Button Content="SAMPLE12" Width="100" Height="100" Click="Button_Click" />
+            <Button Content="SAMPLE13" Width="100" Height="100" Click="Button_Click" />
+        </uc:CarouselCanvas>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <RadioButton GroupName="Presets" Content="Preset1" Margin="0,0,30,0" Checked="RadioButton_Checked"/>
+            <RadioButton GroupName="Presets" Content="Preset2" Margin="0,0,30,0" Checked="RadioButton_Checked_1"/>
+            <RadioButton GroupName="Presets" Content="Preset3" Margin="0,0,30,0" Checked="RadioButton_Checked_2"/>
+            <ToggleButton x:Name="btnRotation" Content="Rotate" Margin="5" Click="ToggleButton_Click" IsChecked="true"></ToggleButton>
+            <ToggleButton x:Name="btnOrientation" Content="Vertical" Margin="5" Click="btnOrientation_Click"></ToggleButton>
+            <Button x:Name="btnOpenCarousel" Content="Open" Margin="5" Click="btnOpenCarousel_Click" />
+        </StackPanel>
+        
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <TextBlock Text="RadiusX" Margin="0,0,30,0"/>
+            <Slider x:Name="slider1" Width="200" Minimum="50" Maximum="300" Value="{Binding Value, Mode=TwoWay, Source={StaticResource sliderBinder1}}" ValueChanged="slider1_ValueChanged" />
+        </StackPanel>
+        
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <TextBlock Text="RadiusY" Margin="0,0,30,0"/>
+            <Slider x:Name="slider2" Width="200" Minimum="-100" Maximum="300" Value="50" ValueChanged="slider2_ValueChanged" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <TextBlock Text="Minimum Opacity" Margin="0,0,30,0"/>
+            <Slider x:Name="slider3" Width="200" Minimum="-2" Maximum="1" Value="0.10" ValueChanged="slider3_ValueChanged"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <TextBlock Text="Minimum Scale" Margin="0,0,30,0"/>
+            <Slider x:Name="slider7" Width="200" Minimum="0" Maximum="1" Value="0.80" ValueChanged="slider7_ValueChanged"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <TextBlock Text="TransitionDelay" Margin="0,0,30,0"/>
+            <Slider x:Name="slider4" Width="200" Minimum="1" Maximum="100" Value="20" ValueChanged="slider4_ValueChanged"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <TextBlock Text="Elasticness" Margin="0,0,30,0"/>
+            <Slider x:Name="slider5" Width="200" Minimum="0" Maximum="0.999" Value="0.7" ValueChanged="slider5_ValueChanged"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <TextBlock Text="Decelleration" Margin="0,0,30,0"/>
+            <Slider x:Name="slider6" Width="200" Minimum="0" Maximum="1" Value="0.2" ValueChanged="slider6_ValueChanged"/>
+        </StackPanel>
+        
+        
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="PREV" Width="100" Height="20" Click="Prev_Click"/>
+            <Button Content="NEXT" Width="100" Height="20" Click="Next_Click"/>
+        </StackPanel>
+        <ListBox x:Name="listBox" Height="100" Margin="10">
+            
+        </ListBox>
+    </StackPanel>
+</UserControl>
